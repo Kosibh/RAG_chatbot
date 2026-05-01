@@ -1,11 +1,30 @@
-## Components Used
+# RAG Chatbot 
+An AI-powered Retrieval-Augmented Generation (RAG) chatbot that allows users to query documents and receive intelligent responses using LLMs.
 
-- **FastAPI**: To build backend.
+## Features
+
+- **FastAPI**: To build backend for handling requests.
 - **Streamlit**: To create chat-like user interface (frontend).
-- **LangChain**: For document loaders, chunking, and text embeddings.
+- **LangChain**: For document ingestion, chunking, and text embeddings.
 - **OpenAI GPT-3.5**: For language model processing and generating responses.
-- **FAISS**: For vector storage to store and retrieve embeddings.
+- **FAISS**: For Semantic search, vector storage to store and retrieve embeddings.
 - **Python-dotenv**: To manage environment variables securely.
+
+## Tech Stack
+
+- Python
+- FastAPI
+- Streamlit
+- LangChain
+- OpenAI API
+- FAISS
+
+## My Contributions
+
+- Set up and debugged the full-stack project locally
+- Cleaned and restructured the repository
+- Improved backend–frontend workflow
+- Prepared system for enhancements
 
 ## Setup Instructions
 
