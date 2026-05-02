@@ -35,6 +35,13 @@ Query → Similarity Search → LLM → Response
 - Implemented secure environment variable handling
 - Designed frontend workflow for file upload & quering
 
+## Demo
+
+Here is the working RAG chatbot UI:
+
+
+![demo](assets/demo.png)
+
 ## Setup Instructions
 
 ```bash
@@ -59,8 +66,5 @@ uvicorn backend.app:app --reload
 # 6. Run frontend
 streamlit run frontend/main.py
 
-## Demo
 
-Here is the working RAG chatbot UI:
 
-![demo](assets/demo.png)
