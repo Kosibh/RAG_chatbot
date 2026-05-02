@@ -34,10 +34,11 @@ Query → Similarity Search → LLM → Response
 
 ## My Contributions
 
-- Set up and debugged the full-stack project locally
-- Cleaned and restructured the repository
-- Improved backend–frontend workflow
-- Prepared system for enhancements
+- Built full-stack RAG system from scratch
+- Integrated document loaders + embeddings + vector search
+- Debugged API errors, quota issues, and module imports
+- Implemented secure environment variable handling
+- Designed frontend workflow for file upload & quering
 
 ## Setup Instructions
 
@@ -63,3 +64,6 @@ uvicorn backend.app:app --reload
 # 6. Run frontend
 streamlit run frontend/main.py
 
+## Demo
+
+![alt text](image.png)
