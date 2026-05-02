@@ -16,7 +16,7 @@ from langchain.document_loaders import UnstructuredPowerPointLoader
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQAWithSourcesChain
 
-from functions import chunk_data, calculate_embedding_cost, create_embeddings
+from backend.functions import chunk_data, calculate_embedding_cost, create_embeddings
 
 #--------------------------------------------------------------------------------------------#
 
@@ -51,7 +51,11 @@ async def upload_files(files: List[UploadFile]):
     
     # Save and process files
     for file in files:
-        file_path = os.path.join("tempDir", file.filename)
+        UPLOAD_DIR = "tempDir"
+        os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+        safe_filename = file.filename.replace(" ", "_").replace("(", "").replace(")", "")
+        file_path = os.path.join(UPLOAD_DIR,safe_filename)
         with open(file_path, "wb") as f:
             f.write(file.file.read())
         
@@ -144,4 +148,3 @@ async def generate_response(query_request: QueryRequest):
             "answer": ans['answer'],
             "sources": ans['sources'],
            }
-

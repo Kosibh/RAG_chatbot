@@ -3,7 +3,7 @@ import time
 import requests
 import streamlit as st
 from streamlit_option_menu import option_menu
-from streamlit_extras.switch_page_button import switch_page
+#from streamlit_extras.switch_page_button import switch_page
 
 #--------------------------------------------------------------------------------------------#
 
@@ -205,7 +205,8 @@ if sidebar_options == 'Ask Question':
 
 # about the app page
 elif sidebar_options == 'About the App':
-    switch_page('about')
+    # switch_page('about')
+    st.info("About page navigation is disabled for local setup")
 
 else:
     pass

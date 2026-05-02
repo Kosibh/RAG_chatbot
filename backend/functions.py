@@ -35,5 +35,3 @@ def create_embeddings(chunks):
     embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
     vector_store = FAISS.from_documents(chunks, embeddings)
     return vector_store
-
-
