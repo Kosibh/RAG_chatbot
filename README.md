@@ -66,4 +66,6 @@ streamlit run frontend/main.py
 
 ## Demo
 
-![alt text](image.png)
+Here is the working RAG chatbot UI:
+
+![demo](assets/demo.png)
