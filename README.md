@@ -1,14 +1,21 @@
 # RAG Chatbot 
-An AI-powered Retrieval-Augmented Generation (RAG) chatbot that allows users to query documents and receive intelligent responses using LLMs.
+An AI-powered Retrieval-Augmented Generation (RAG) chatbot that allows users to upload documents and ask questions based on their content.
 
 ## Features
 
-- **FastAPI**: To build backend for handling requests.
-- **Streamlit**: To create chat-like user interface (frontend).
-- **LangChain**: For document ingestion, chunking, and text embeddings.
-- **OpenAI GPT-3.5**: For language model processing and generating responses.
-- **FAISS**: For Semantic search, vector storage to store and retrieve embeddings.
-- **Python-dotenv**: To manage environment variables securely.
+-  Upload documents (PDF, DOCX, TXT, PPTX, XLSX)
+-  Semantic search using FAISS
+-  Context-aware answers using LLM
+-  FastAPI backend + Streamlit frontend
+-  Secure API key handling with `.env`
+-  Multi-format document ingestion
+
+##  Architecture
+
+User → Streamlit UI → FastAPI →  
+Document Loader → Chunking → Embeddings → FAISS →  
+Query → Similarity Search → LLM → Response
+
 
 ## Tech Stack
 
@@ -19,6 +26,12 @@ An AI-powered Retrieval-Augmented Generation (RAG) chatbot that allows users to 
 - OpenAI API
 - FAISS
 
+##  Demo
+
+> Upload a document and ask questions like:
+> "Summarize this file"
+> "What are the key dates?"
+
 ## My Contributions
 
 - Set up and debugged the full-stack project locally
@@ -28,22 +41,25 @@ An AI-powered Retrieval-Augmented Generation (RAG) chatbot that allows users to 
 
 ## Setup Instructions
 
-1. Install Anaconda on your system.
-2. Download the code on your system and open new anaconda terminal in the parent dir of the downloaded code.
-3. Create a new virtual env using below command. <br>
-**-> conda create -n chatbotenv python=3.8**
-4. Now activate the virtual env, by using below command. <br>
-**-> conda activate chatbotenv**
-5. Now, install the required packages in the above virtual env. <br>
-**-> pip install -r requirements.txt**
-6. Now open a new terminal/cmd in the parent dir of the code and run below command <br>
-**-> cd backend**
-7. Now run the backend application by using below commands. <br>
-**-> uvicorn app:app --reload**
-8. Now again open a new terminal/cmd in the parent dir of the code and run below command <br>
-**-> cd frontend**
-9. Now run the backend application by using below commands. <br>
-**-> streamlit run main.py**
-10. Now, app should be up and running on local port 8501, to view the app goto your browser and paste the below URL. <br>
-**-> http://localhost:8501/**
+```bash
+# 1. Clone repo
+git clone <your-repo-link>
+cd RAG-chatbot
+
+# 2. Create virtual environment
+python -m venv venv
+venv\Scripts\activate   # Windows
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Add API key
+Create .env file:
+OPENAI_API_KEY=your_key_here
+
+# 5. Run backend
+uvicorn backend.app:app --reload
+
+# 6. Run frontend
+streamlit run frontend/main.py
 
