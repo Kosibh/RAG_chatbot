@@ -26,11 +26,6 @@ Query → Similarity Search → LLM → Response
 - OpenAI API
 - FAISS
 
-##  Demo
-
-> Upload a document and ask questions like:
-> "Summarize this file"
-> "What are the key dates?"
 
 ## My Contributions
 
